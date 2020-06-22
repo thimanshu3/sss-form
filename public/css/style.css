@@ -1,0 +1,26 @@
+#love {
+    color: #ff0000;
+    transition: all 1000ms linear;
+    animation: colorcycle 2s infinite;
+}
+
+@keyframes colorcycle {
+    0% {
+        color: #2d3436;
+    }
+    20% {
+        color: #e84393;
+    }
+    40% {
+        color: #e74c3c;
+    }
+    60% {
+        color: #0984e3;
+    }
+    80% {
+        color: #2ecc71;
+    }
+    100% {
+        color: #2d3436;
+    }
+}
