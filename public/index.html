@@ -55,7 +55,7 @@
             var email = e.currentTarget.elements.email.value
             if (!email.includes('@technonjr.org'))
                 return M.toast({ html: 'Email ID must be College Email ID!' })
-            fetch('http://localhost:5000/verify', {
+            fetch('https://sss-i3-api.herokuapp.com/verify', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -1186,7 +1186,7 @@
                 overallQualityOfTeachingLearningProcess: $("input[name='overallQualityOfTeachingLearningProcess']:checked").val(),
                 observationsAndSuggestion: $('#observationsAndSuggestion').val(),
             }
-            fetch('http://localhost:5000/feedback', {
+            fetch('https://sss-i3-api.herokuapp.com/feedback', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
