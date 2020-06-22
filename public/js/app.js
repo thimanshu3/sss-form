@@ -1,10 +1,12 @@
 var userEmail
 var code
+
 $('#verifyEmailForm').submit(function (e) {
     e.preventDefault()
     var email = e.currentTarget.elements.email.value
     if (!email.includes('@technonjr.org'))
         return M.toast({ html: 'Email ID must be College Email ID!' })
+    $('#btnSubmit').attr("disabled", true)
     fetch('https://sss-i3-api.herokuapp.com/verify', {
         method: 'POST',
         headers: {
@@ -18,6 +20,7 @@ $('#verifyEmailForm').submit(function (e) {
             return res.json()
         })
         .then(function (json) {
+            $('#btnSubmit').attr("disabled", false)
             if (json.status == 400) {
                 return M.toast({ html: json.message })
             }
@@ -30,7 +33,7 @@ $('#verifyEmailForm').submit(function (e) {
                                     <input type="text" name="verificationCode" id="verificationCode" required>
                                     <label for="verificationCode">Verification Code</label>
                                 </div>
-                                <button class="btn-small waves-effect waves-light" type="submit">
+                                <button id="btnSubmit" class="btn-small waves-effect waves-light" type="submit">
                                     Verify
                                     <i class="material-icons right">send</i>
                                 </button>
@@ -47,6 +50,7 @@ $('#verifyEmailForm').submit(function (e) {
             location.reload()
         })
 })
+
 function verifyCode(e) {
     e.preventDefault()
     var verificationCode = e.currentTarget.elements.verificationCode.value
@@ -74,25 +78,25 @@ function verifyCode(e) {
                                     <h6>Year</h6>
                                     <p>
                                         <label>
-                                            <input class="with-gap" name="year" type="radio" value="1" checked />
+                                            <input class="with-gap" name="year" type="radio" value="1" required />
                                             <span>1st</span>
                                         </label>
                                     </p>
                                     <p>
                                         <label>
-                                            <input class="with-gap" name="year" type="radio" value="2" />
+                                            <input class="with-gap" name="year" type="radio" value="2" required />
                                             <span>2nd</span>
                                         </label>
                                     </p>
                                     <p>
                                         <label>
-                                            <input class="with-gap" name="year" type="radio" value="3" />
+                                            <input class="with-gap" name="year" type="radio" value="3" required />
                                             <span>3rd</span>
                                         </label>
                                     </p>
                                     <p>
                                         <label>
-                                            <input class="with-gap" name="year" type="radio" value="4" />
+                                            <input class="with-gap" name="year" type="radio" value="4" required />
                                             <span>4th</span>
                                         </label>
                                     </p>
@@ -102,37 +106,37 @@ function verifyCode(e) {
                                     <h6>Branch</h6>
                                     <p>
                                         <label>
-                                            <input class="with-gap" name="branch" type="radio" value="CSE" checked />
+                                            <input class="with-gap" name="branch" type="radio" value="CSE" required />
                                             <span>CSE</span>
                                         </label>
                                     </p>
                                     <p>
                                         <label>
-                                            <input class="with-gap" name="branch" type="radio" value="ECE" />
+                                            <input class="with-gap" name="branch" type="radio" value="ECE" required />
                                             <span>ECE</span>
                                         </label>
                                     </p>
                                     <p>
                                         <label>
-                                            <input class="with-gap" name="branch" type="radio" value="ME" />
+                                            <input class="with-gap" name="branch" type="radio" value="ME" required />
                                             <span>ME</span>
                                         </label>
                                     </p>
                                     <p>
                                         <label>
-                                            <input class="with-gap" name="branch" type="radio" value="CE" />
+                                            <input class="with-gap" name="branch" type="radio" value="CE" required />
                                             <span>CE</span>
                                         </label>
                                     </p>
                                     <p>
                                         <label>
-                                            <input class="with-gap" name="branch" type="radio" value="EEE" />
+                                            <input class="with-gap" name="branch" type="radio" value="EEE" required />
                                             <span>EEE</span>
                                         </label>
                                     </p>
                                     <p>
                                         <label>
-                                            <input class="with-gap" name="branch" type="radio" value="EE" />
+                                            <input class="with-gap" name="branch" type="radio" value="EE" required />
                                             <span>EE</span>
                                         </label>
                                     </p>
@@ -1088,7 +1092,7 @@ function verifyCode(e) {
                                 </div>
                             </div>
                         </div>
-                        <button class="btn waves-effect waves-light" type="submit">
+                        <button id="btnSubmit" class="btn waves-effect waves-light" type="submit">
                             Submit
                             <i class="material-icons right">send</i>
                         </button>
@@ -1098,6 +1102,7 @@ function verifyCode(e) {
     $('select').formSelect()
     $('#sendFeedback').submit(sendFeedback)
 }
+
 function sendFeedback(e) {
     e.preventDefault()
     var elements = e.currentTarget.elements
@@ -1136,6 +1141,7 @@ function sendFeedback(e) {
         overallQualityOfTeachingLearningProcess: $("input[name='overallQualityOfTeachingLearningProcess']:checked").val(),
         observationsAndSuggestion: $('#observationsAndSuggestion').val(),
     }
+    $('#btnSubmit').attr("disabled", true)
     fetch('https://sss-i3-api.herokuapp.com/feedback', {
         method: 'POST',
         headers: {
@@ -1147,6 +1153,7 @@ function sendFeedback(e) {
             return res.json()
         })
         .then(function (json) {
+            $('#btnSubmit').attr("disabled", false)
             if (json.status == 201) {
                 M.toast({ html: 'Feedback Submitted Successfully!' })
                 $('#formContainer').empty()
