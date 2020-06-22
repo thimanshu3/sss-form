@@ -16,7 +16,7 @@ module.exports = (email, subject, body) => {
         }
     })
     const mailOptions = {
-        from: `LMS <${process.env.NODEMAILER_EMAIL}>`,
+        from: `Techno India NJR - Student Satisfaction Survey <${process.env.NODEMAILER_EMAIL}>`,
         to: email,
         subject,
         text: body
