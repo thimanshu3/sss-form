@@ -4,76 +4,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSS Form</title>
+    <title>Student Satisfaction Survey</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="section">
-            <div class="row center">
-                <h3 class="light header">Student Satisfaction Survey
-                </h3>
-                <p class="col s12 m8 offset-m2 caption">Guidelines for Students:
-                    NAAC (National Assessment and accreditation council) is conducting a Student Satisfaction
-                    Survey regarding Teaching – Learning and Evaluation, which will help to upgrade the quality
-                    in higher education. A student will have to respond to all the questions given in the following
-                    format with her/his sincere effort and thought. Her/his identity will not be revealed.</p>
-                <a href="http://www.naac.gov.in/" class="btn-large waves-effect waves-light">Explore our
-                    Website</a>
-            </div>
+    <header>
+        <div class="container">
+            <h4 class="red-text text-lighten-2">Student Satisfaction Survey</h4>
+            <blockquote>
+                Guidelines for Students:
+                NAAC (National Assessment and accreditation council) is conducting a Student Satisfaction
+                Survey regarding Teaching – Learning and Evaluation, which will help to upgrade the quality
+                in higher education. A student will have to respond to all the questions given in the following
+                format with her/his sincere effort and thought. Her/his identity will not be revealed.
+            </blockquote>
         </div>
-        <div class="row">
-            <div class="card mb-2">
-                <div class="row card-content">
-                    <div class="input-field col s10">
-                        <input id="email" type="email" class="validate">
-                        <label for="email" style="font-size: 1rem; color: #000000;">Email</label>
-                        <span class="helper-text" data-error="Enter a valid email address"
-                            data-success="">*Required</span>
-                    </div>
-                    <a class="waves-effect waves-light btn-small"><i class="material-icons right">cloud</i>Verify</a>
-                </div>
-            </div>
-            <div class="card mb-2">
-                <div class="row card-content inline">
-                    <label style="font-size: 1rem; color: #000000;">Please confirm this is the first and only time
-                        you
-                        answer this
-                        survey.</label>
-                    <div class="input-field">
+    </header>
 
-                        <p>
-                            <label>
-                                <input class="with-gap" name="group3" type="radio" checked />
-                                <span>Yes</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <input class="with-gap" name="group3" type="radio" checked />
-                                <span>No</span>
-                            </label>
-                        </p>
-                    </div>
+
+    <div class="container">
+        <div id="verification" class="row">
+            <form id="verifyEmailForm" class="col s12">
+                <div class="input-field">
+                    <input id="email" type="email" name="email" required>
+                    <label for="email">Email</label>
                 </div>
-            </div>
-            <div class="card mb-2">
-                <div class="row card-content">
-                    <div class="input-field col s12">
-                        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                        <label for="first_name" style="font-size: 1.2rem; color: #000000;" class="active">First
-                            Name</label>
+                <button class="btn-small waves-effect waves-light" type="submit">
+                    Next
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+            <form id="sendFeedback" class="col s12">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card-panel">
+                            <div class="input-field">
+                                <input type="email" name="email" id="email" value="17etccs011@technonjr.org" disabled>
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" name="name" id="name" required>
+                                <label for="name">Full Name</label>
+                            </div>
+                        </div>
                     </div>
+                    <div class="col s12">
+                        <div class="card-panel">
+                            <div class="input-field">
+                                <h6>Year</h6>
+                                <p>
+                                    <label>
+                                        <input class="with-gap" name="year" type="radio" value="1" checked />
+                                        <span>1st</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input class="with-gap" name="year" type="radio" value="2" />
+                                        <span>2nd</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input class="with-gap" name="year" type="radio" value="3" />
+                                        <span>3rd</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input class="with-gap" name="year" type="radio" value="4" />
+                                        <span>4th</span>
+                                    </label>
+                                </p>
+                            </div>
+                            <hr />
+                            <div class="input-field">
+                                <h6>Branch</h6>
+                                <p>
+                                    <label>
+                                        <input class="with-gap" name="branch" type="radio" value="CSE" checked />
+                                        <span>CSE</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input class="with-gap" name="branch" type="radio" value="ECE" />
+                                        <span>ECE</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input class="with-gap" name="branch" type="radio" value="ME" />
+                                        <span>ME</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input class="with-gap" name="branch" type="radio" value="CE" />
+                                        <span>CE</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input class="with-gap" name="branch" type="radio" value="EEE" />
+                                        <span>EEE</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input class="with-gap" name="branch" type="radio" value="EE" />
+                                        <span>EE</span>
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="card-panel">
+                            <div class="input-field">
+                                <input type="text" name="rollNumber" id="rollNumber" required>
+                                <label for="rollNumber">RTU Roll Number</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="number" name="aadharNumber" id="aadharNumber" required>
+                                <label for="aadharNumber">Aadhar Number</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="number" name="phoneNumber" id="phoneNumber" required>
+                                <label for="phoneNumber">Phone Number</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="card-panel">
+                            <div class="input-field">
+                                <select name="gender" id="gender" required>
+                                    <option value="female" selected>Woman</option>
+                                    <option value="male">Man</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <label>Gender</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="number" name="age" id="age" min="15" max="25" required>
+                                <label for="age">Age</label>
+                            </div>
+                            <div class="input-field">
+                                <select name="collegeName" id="collegeName" required>
+                                    <option value="Techno India NJR" selected>Techno India NJR</option>
+                                </select>
+                                <label for="collegeName">College</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="card-panel">
+                            <div class="input-field">
+                                <select name="degreeCurrentlyPursuing" id="degreeCurrentlyPursuing" required>
+                                    <option value="bachelor" selected>Bachelor's</option>
+                                    <option value="master">Master's</option>
+                                    <option value="mphil">MPhil</option>
+                                    <option value="doctorate">Doctorate</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <label>What degree program are you pursuing now?</label>
+                            </div>
+                            <br />
+                            <div class="input-field">
+                                <select name="subjectCurrentlyPursuing" id="subjectCurrentlyPursuing" required>
+                                    <option value="science" selected>Science</option>
+                                    <option value="arts">Arts</option>
+                                    <option value="commerce">Commerce</option>
+                                    <option value="professional">Professional</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <label>What subject area are you currently pursuing?</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="card-panel">
+                            <div class="input-field">
+                                <p>
+                                    Give three observation/suggestions to improve the overall teaching-learning
+                                    experience in your institution.
+                                </p>
+                                <textarea id="observationsAndSuggestion" class="materialize-textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">
+                        Submit
+                        <i class="material-icons right">send</i>
+                    </button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
+    <script src="js/jquery.min.js"></script>
     <script src="js/materialize.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        var userEmail
+        $('#verifyEmailForm').submit(function (e) {
+            e.preventDefault()
+            var email = e.currentTarget.elements.email.value
+            if (!email.includes('@technonjr.org'))
+                return M.toast({ html: 'Email ID must be College Email ID!' })
+            // TODO fetch
+            M.toast({ html: 'Verification Code sent to your Email!' })
+            $('#verification').empty()
+            $('#verification').append(`
+                <form id="verifyCode" class="col s12">
+                    <div class="input-field">
+                        <input type="text" name="verificationCode" id="verificationCode" required>
+                        <label for="verificationCode">Verification Code</label>
+                    </div>
+                    <button class="btn-small waves-effect waves-light" type="submit">
+                        Verify
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            `)
+            $('#verifyCode').submit(verifyCode)
+            userEmail = email
+        })
+        function verifyCode(e) {
+            e.preventDefault()
+            var verificationCode = e.currentTarget.elements.verificationCode.value
+            // TODO fetch
+            if (!verificationCode === '1234')
+                return M.toast({ html: 'Invalid Verification Code!' })
+            $('#verification').empty()
+            $('#verification').append(`
+                <form id="sendFeedback" class="col s12">
+                </form>
+            `)
+            $('select').formSelect()
+            $('#sendFeedback').submit(sendFeedback)
+        }
+        function sendFeedback(e) {
+            e.preventDefault()
+            var elements = e.currentTarget.elements
+            var data = {
+                email: userEmail,
+                name: elements.name.value,
+                year: $("input[name='year']:checked").val(),
+                branch: $("input[name='branch']:checked").val(),
+                rollNumber: elements.rollNumber.value,
+                aadharNumber: elements.aadharNumber.value,
+                phoneNumber: elements.phoneNumber.value,
+                gender: elements.gender.value,
+                age: elements.age.value,
+                collegeName: elements.collegeName.value,
+                degreeCurrentlyPursuing: elements.degreeCurrentlyPursuing.value,
+                subjectCurrentlyPursuing: elements.subjectCurrentlyPursuing.value,
+                observationsAndSuggestion: $('#observationsAndSuggestion').val(),
+            }
+            console.log(data)
+        }
+        $('select').formSelect()
+        $('#sendFeedback').submit(sendFeedback)
+    </script>
 </body>
 
 </html>
