@@ -4,7 +4,6 @@ const cors = require('cors')
 
 const MySql = require('./db')
 const Feedback = require('./models/FeedbackModel')
-const Verify = require('./models/VerifyModel')
 const sendMail = require('./sendMail')
 
 const app = express()

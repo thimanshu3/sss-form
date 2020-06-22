@@ -94,7 +94,7 @@ const Feedback = MySql.define('feedback', {
         allowNull: false
     },
 
-    mentorDoesNotFollowUp: {
+    mentorDoesFollowUp: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
@@ -130,7 +130,7 @@ const Feedback = MySql.define('feedback', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    qualityOfTeachingLearningProcess: {
+    overallQualityOfTeachingLearningProcess: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
