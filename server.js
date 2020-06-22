@@ -34,6 +34,18 @@ app.post('/verify', async (req, res) => {
     res.json({ status: 200, message: 'Verification Code Sent To Your Email!', code })
 })
 
+app.get('/feedback', async (req, res) => {
+    if (req.query.apiKey !== process.env.API_KEY)
+        return res.status(401).json({ status: 401, message: 'Not Allowed!' })
+    try {
+        const foundFeedbacks = await Feedback.findAll()
+        res.json({ status: 200, message: 'List of All Feedbacks!', data: { feedbacks: foundFeedbacks } })
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ status: 500, message: err.toString() })
+    }
+})
+
 app.post('/feedback', async (req, res) => {
     try {
         await Feedback.create(req.body)
