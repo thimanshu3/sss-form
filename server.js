@@ -20,7 +20,9 @@ app.post('/verify', async (req, res) => {
         return res.status(400).json({ status: 400, message: 'Email ID must be College Email ID!' })
 
     const foundFeedback = await Feedback.findOne({
-        email: req.body.email
+        where: {
+            email: req.body.email
+        }
     })
     if (foundFeedback)
         return res.status(400).json({ status: 400, message: 'You have already taken the survey!' })
