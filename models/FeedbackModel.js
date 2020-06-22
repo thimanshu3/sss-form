@@ -143,4 +143,4 @@ const Feedback = MySql.define('feedback', {
 
 module.exports = Feedback
 
-Feedback.sync({ force: process.env.NODE_ENV === 'production' ? false : true })
+// Feedback.sync({ force: process.env.NODE_ENV === 'production' ? false : true })

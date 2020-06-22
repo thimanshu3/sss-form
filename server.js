@@ -20,7 +20,9 @@ app.post('/verify', async (req, res) => {
         return res.status(400).json({ status: 400, message: 'Email ID must be College Email ID!' })
 
     const foundFeedback = await Feedback.findOne({
-        email: req.body.email
+        where: {
+            email: req.body.email
+        }
     })
     if (foundFeedback)
         return res.status(400).json({ status: 400, message: 'You have already taken the survey!' })
@@ -30,6 +32,18 @@ app.post('/verify', async (req, res) => {
     sendMail(req.body.email, 'Your Verification Code for Student Satisfaction Survey', `${code}`)
 
     res.json({ status: 200, message: 'Verification Code Sent To Your Email!', code })
+})
+
+app.get('/feedback', async (req, res) => {
+    if (req.query.apiKey !== process.env.API_KEY)
+        return res.status(401).json({ status: 401, message: 'Not Allowed!' })
+    try {
+        const foundFeedbacks = await Feedback.findAll()
+        res.json({ status: 200, message: 'List of All Feedbacks!', data: { feedbacks: foundFeedbacks } })
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ status: 500, message: err.toString() })
+    }
 })
 
 app.post('/feedback', async (req, res) => {
