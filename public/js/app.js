@@ -186,21 +186,13 @@ function verifyCode(e) {
                                 <div class="input-field">
                                     <select name="degreeCurrentlyPursuing" id="degreeCurrentlyPursuing" required>
                                         <option value="bachelor" selected>Bachelor's</option>
-                                        <option value="master">Master's</option>
-                                        <option value="mphil">MPhil</option>
-                                        <option value="doctorate">Doctorate</option>
-                                        <option value="other">Other</option>
                                     </select>
                                     <label>What degree program are you pursuing now?</label>
                                 </div>
                                 <br />
                                 <div class="input-field">
                                     <select name="subjectCurrentlyPursuing" id="subjectCurrentlyPursuing" required>
-                                        <option value="science" selected>Science</option>
-                                        <option value="arts">Arts</option>
-                                        <option value="commerce">Commerce</option>
-                                        <option value="professional">Professional</option>
-                                        <option value="other">Other</option>
+                                        <option value="professional" selected>Professional</option>
                                     </select>
                                     <label>What subject area are you currently pursuing?</label>
                                 </div>
