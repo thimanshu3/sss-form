@@ -150,11 +150,11 @@ function verifyCode(e) {
                                     <label for="rollNumber">RTU Roll Number</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="number" name="aadharNumber" id="aadharNumber" required>
+                                    <input type="tel" name="aadharNumber" id="aadharNumber" maxlength="12" minlength="12" required>
                                     <label for="aadharNumber">Aadhar Number</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="number" name="phoneNumber" id="phoneNumber" required>
+                                    <input type="tel" name="phoneNumber" id="phoneNumber" maxlength="10" minlength="10" required>
                                     <label for="phoneNumber">Phone Number</label>
                                 </div>
                             </div>
@@ -163,9 +163,9 @@ function verifyCode(e) {
                             <div class="card-panel">
                                 <div class="input-field">
                                     <select name="gender" id="gender" required>
-                                        <option value="female" selected>Woman</option>
-                                        <option value="male">Man</option>
-                                        <option value="other">Other</option>
+                                        <option value="Female" selected>Female</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                     <label>Gender</label>
                                 </div>
@@ -185,7 +185,7 @@ function verifyCode(e) {
                             <div class="card-panel">
                                 <div class="input-field">
                                     <select name="degreeCurrentlyPursuing" id="degreeCurrentlyPursuing" required>
-                                        <option value="bachelor" selected>Bachelor's</option>
+                                        <option value="Undergraduate" selected>Undergraduate</option>
                                     </select>
                                     <label>What degree program are you pursuing now?</label>
                                 </div>
